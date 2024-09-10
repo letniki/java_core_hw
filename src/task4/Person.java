@@ -10,7 +10,7 @@ public class Person {
     private int age;
     private ArrayList<Skill> skills;
     private Car car;
-    Gender gender;
+    private Gender gender;
     public Person(int id, String name, String surname, String email, int age, Gender gender,ArrayList<Skill> skills,Car car) {
         this.id = id;
         this.name = name;
