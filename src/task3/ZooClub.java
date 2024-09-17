@@ -29,10 +29,9 @@ public class ZooClub {
         club.put(new Person( name, id), new ArrayList<>());
     }
 
-    public boolean showAll() {
+    public void showAll() {
         if (club.isEmpty()) {
             System.out.println("Club is empty");
-            return false;
         }
         for (Map.Entry<Person, List<Pet>> entry : club.entrySet()) {
             Person person = entry.getKey();
@@ -40,11 +39,11 @@ public class ZooClub {
 
             System.out.println(person + " Pets: " + pets);
         }
-        return true;
+
     }
 
     public void addPet(int personId, Animal animal, String  name) {
-        if (showAll()) {
+        if (!club.isEmpty()) {
             Person person = getPersonById(personId);
 
             if (person != null) {
@@ -64,7 +63,7 @@ public class ZooClub {
     }
 
     public void deletePetById(int personId, int petId) {
-        if (showAll()) {
+        if (!club.isEmpty()) {
             Person person = getPersonById(personId);
             if (person != null) {
                 List<Pet> pets = club.get(person);
@@ -80,7 +79,7 @@ public class ZooClub {
         }
     }
     public void deletePetByName(int personId, String petName) {
-        if (showAll()) {
+        if (!club.isEmpty()) {
             Person person = getPersonById(personId);
             if (person != null) {
                 List<Pet> pets = club.get(person);
@@ -96,7 +95,7 @@ public class ZooClub {
     }
 
     public void deletePerson(int id) {
-        if (showAll()) {
+        if (!club.isEmpty()) {
             Person person = getPersonById(id);
 
             if (person != null) {
