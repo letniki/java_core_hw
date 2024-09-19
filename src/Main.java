@@ -11,8 +11,8 @@ public class Main {
     public static void main(String[] args){
         String string = readFromFile("emails.txt");
 
-        List<String> collect = Arrays.stream(string.split("\\s+")).filter(email -> email.contains("@gmail.com")).toList();
-        writeToFile("gmail_emails.txt", String.join("\n", collect));
+        List<String> list = Arrays.stream(string.split("\\s+")).filter(email -> email.contains("@gmail.com")).toList();
+        writeToFile("gmail_emails.txt", String.join("\n", list));
         String string1 = readFromFile("gmail_emails.txt");
         System.out.println(string1);
     }
