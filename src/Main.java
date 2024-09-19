@@ -13,8 +13,8 @@ public class Main {
 
         List<String> list = Arrays.stream(string.split("\\s+")).filter(email -> email.contains("@gmail.com")).toList();
         writeToFile("gmail_emails.txt", String.join("\n", list));
-        String string1 = readFromFile("gmail_emails.txt");
-        System.out.println(string1);
+        String gmailEmails = readFromFile("gmail_emails.txt");
+        System.out.println(gmailEmails);
     }
 @SneakyThrows
     public static void writeToFile(String fileName, String text){
