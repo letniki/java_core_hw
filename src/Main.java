@@ -9,12 +9,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args){
-//        System.out.println(readFromFile("emails.txt"));
-//        writeToFile("emails.txt", )
-//        Path path = Paths.get(System.getProperty("user.home"));
-//        Stream<Path> stream = Files.list(path);
-//        stream.forEach(file -> System.out.println(file.getFileName()));
-//        Files.readAllLines("email.txt");
         String string = readFromFile("emails.txt");
 
         List<String> collect = Arrays.stream(string.split("\\s+")).filter(email -> email.contains("@gmail.com")).toList();
